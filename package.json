@@ -1,0 +1,12 @@
+{
+  "name": "utopia-engine-node",
+  "version": "1.0.0",
+  "description": "node server for utopia-engine-react",
+  "main": "server.js",
+  "repository": "git@github.com:MCF-ECM/utopia-engine-node.git",
+  "author": "François Jiang <francois.jiang@centrale-marseille.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
