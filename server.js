@@ -6,23 +6,43 @@ const app = express();
 const hostname = '127.0.0.1';
 const port = 3000;
 
-app.use("/", express.static(path.join(__dirname, '/react/build')));
+const zones = require('./resources/zones.json');
+const objects = require('./resources/objects.json');
+const monsters = require('./resources/monsters.json');
 
-app.get('/fight', (req, res) => {
-    res.redirect(301, '/index.html');
-})
+app.use('/', express.static(path.join(__dirname, '/react/build')));
 
 app.get('/', (req, res) => {
     res.redirect(301, '/build/index.html');
-})
+});
 
-app.use(function (req, res) {
-    console.log(`et c'est le 404 : " ${req.url}`);
+app.get('/api/zones', (req, res) => {
+    res.send(zones);
+});
 
-    res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/html');
+app.get('/api/zone', (req, res) => {
+    const id = req.query.id;
 
-    res.end("<html lang='fr'><head><title>404</title></head><body><h1>Et c'est le 404.</h1><p>Ressource non trouvée</p></body></html>");
+    res.send(zones[id]);
+});
+
+app.get('/api/monster', (req, res) => {
+    const id = req.query.id;
+    const level = req.query.level - 1;
+
+    res.send({"monster": monsters[id][level]});
+});
+
+app.get('/api/object', (req, res) => {
+    const id = req.query.id;
+    const type = req.query.type;
+
+    res.send({"object": objects[id][type]});
+});
+
+
+app.get('/api/objects', (req, res) => {
+    res.send(objects);
 });
 
 app.listen(port, hostname);
