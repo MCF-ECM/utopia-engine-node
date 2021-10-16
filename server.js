@@ -6,15 +6,15 @@ const app = express();
 const hostname = '127.0.0.1';
 const port = 3000;
 
+const urls = ['/', '/search', '/fight'];
+
 const zones = require('./resources/zones.json');
 const objects = require('./resources/objects.json');
 const monsters = require('./resources/monsters.json');
 
-app.use('/', express.static(path.join(__dirname, '/react/build')));
+app.use('/', express.static(path.join(__dirname, '/react/build/')));
 
-app.get('/', (req, res) => {
-    res.redirect(301, '/build/index.html');
-});
+urls.map(url => app.get(url,  (req, res) => res.redirect(301, '/index.html')));
 
 app.get('/api/zones', (req, res) => {
     res.send(zones);
