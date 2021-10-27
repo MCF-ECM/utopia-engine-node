@@ -18,20 +18,24 @@ Vous jouez le rôle d'un vieil artificier nommé Isodoros qui tente de reconstru
 * [Express](https://expressjs.com/fr/) : version 4.17.1
 
 ## Installation
-Vous devez avoir [Node.js](https://nodejs.org/fr/) d'installer sur votre machine pour pouvoir lancer le projet en local, et avoir accès à un gestion de paquets de **Node.js** comme [yarn](https://yarnpkg.com/) ou [npm](https://www.npmjs.com/).
+Vous devez avoir [Node.js](https://nodejs.org/fr/) d'installer sur votre machine pour pouvoir lancer le projet en local, et avoir accès à un gestion de paquets de *Node.js* comme [yarn](https://yarnpkg.com/) ou [npm](https://www.npmjs.com/).
 
-Note : Les commandes ci-dessous peuvent être exécutées avec *npm* à la place de *yarn*.
+>Les commandes ci-dessous peuvent être exécutées avec *npm* ou *yarn*.
 
 Pour installer toutes les dépendences nécessaires : 
-```
+~~~ shell
+$ npm install
+// OU
 $ yarn install
-```
+~~~
 
 Note : Ne pas oublier d'installer les dépendences pour le frontend (dans react).
 
 Pour lancer un server qui sera accessible sur [http://127.0.0.1:3000](http://127.0.0.1:3000) (ou  [http://localhost:3000](http://localhost:3000)):
-```
+~~~ shell
+$ npm start
+// OU
 $ yarn start
-```
+~~~
 
-Note : Ne pas oublier de build le frontend (dans react).
+>Ne pas oublier d'installer les dépendances et de build le *frontend* (dans le dossier react).
