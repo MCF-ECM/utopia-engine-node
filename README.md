@@ -22,14 +22,17 @@ Vous devez avoir [Node.js](https://nodejs.org/fr/) d'installer sur votre machine
 
 >Les commandes ci-dessous peuvent être exécutées avec *npm* ou *yarn*.
 
+Pour cloner le projet avec son sous-module :
+~~~ shell
+$ git clone --recurse-submodules https://github.com/MCF-ECM/utopia-engine-node
+~~~
+
 Pour installer toutes les dépendences nécessaires : 
 ~~~ shell
 $ npm install
 // OU
 $ yarn install
 ~~~
-
-Note : Ne pas oublier d'installer les dépendences pour le frontend (dans react).
 
 Pour lancer un server qui sera accessible sur [http://127.0.0.1:3000](http://127.0.0.1:3000) (ou  [http://localhost:3000](http://localhost:3000)):
 ~~~ shell
@@ -38,4 +41,4 @@ $ npm start
 $ yarn start
 ~~~
 
->Ne pas oublier d'installer les dépendances et de build le *frontend* (dans le dossier react).
+>Ne pas oublier d'installer les dépendances et de compiler le *frontend*.
